@@ -1,5 +1,5 @@
 # Contacts REST API
-[![Build Status](https://travis-ci.com/justinetabin/contact-service.svg?token=5zCcfLXrebppzZpG73JE&branch=master)](https://travis-ci.com/justinetabin/contact-service)
+[![Build Status](https://travis-ci.com/justinetabin/contacts-service.svg?branch=master)](https://travis-ci.com/justinetabin/contacts-service)
 [![codecov](https://codecov.io/gh/justinetabin/contacts-service/branch/master/graph/badge.svg)](https://codecov.io/gh/justinetabin/contacts-service)
 
 A barebone Node.JS CRUD application.
