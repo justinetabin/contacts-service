@@ -54,15 +54,15 @@ Runs all test.
 ```
 $ npm test
 ```
-`Routes` integration testing.
+`Routes`
 ```
-$ npm run test-api
+$ npm run test:api
 ```
-`Workers` unit testing.
+`Workers`
 ``` 
-$ npm run test-workers
+$ npm run test:workers
 ```
-`Services` unit testing.
+`Services`
 ```
-$ npm run test-services
+$ npm run test:services
 ```
