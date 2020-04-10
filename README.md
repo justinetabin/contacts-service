@@ -1,13 +1,13 @@
 # Contacts REST API
 [![Build Status](https://travis-ci.com/justinetabin/contacts-service.svg?branch=master)](https://travis-ci.com/justinetabin/contacts-service)
 [![codecov](https://codecov.io/gh/justinetabin/contacts-service/branch/master/graph/badge.svg)](https://codecov.io/gh/justinetabin/contacts-service)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge&svg=1)](https://contacts-service.herokuapp.com/documentation)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=contacts-service&root=contacts&svg=1)](https://contacts-service.herokuapp.com/documentation)
 
 
 A barebone Node.JS CRUD application.
 
 # Architecture Overview
-This project's architecture highlights separation of concerns and dividing software into layers.
+This project's architecture highlights separation of concerns.
 
 ### Service Layer
 - Encapsulates the interaction between 3rd party service or API. 
