@@ -16,6 +16,7 @@ class MockContactStore {
         updatedAt: new Date('2020-04-05T08:46:49.005Z')
       }
     ]
+    this.isSuccess = true
   }
 
   fetchContacts() {
@@ -27,15 +28,15 @@ class MockContactStore {
   }
 
   createContact(contact) {
-    return Promise.resolve(true)
+    return Promise.resolve(this.isSuccess)
   }
 
   updateContact(contact) {
-    return Promise.resolve(true)
+    return Promise.resolve(this.isSuccess)
   }
 
   deleteContact(contactId) {
-    return Promise.resolve(true)
+    return Promise.resolve(this.isSuccess)
   }
 }
 
@@ -83,22 +84,6 @@ describe('ContactsWorker', () => {
     expect(gotContact).to.instanceOf(Contact)
   })
 
-  it('should return Error', async () => {
-    // given
-    contactStore.contacts = []
-
-    // when
-    var gotError
-    try {
-      await sut.getContact('')
-    } catch (error) {
-      gotError = error
-    }
-
-    // then
-    expect(gotError.message).to.equal(Error('Contact not found').message)
-  })
-
   it('should create a Contact', async () => {
     // given
     const contact = contactStore.contacts[0]
@@ -111,7 +96,7 @@ describe('ContactsWorker', () => {
     const result = await sut.createContact(expectedContact)
 
     // then
-    expect(result).to.equal(true)
+    expect(result).to.eql(expectedContact)
   })
 
   it('should update a Contact, should update Contact updatedAt', async () => {
@@ -136,6 +121,43 @@ describe('ContactsWorker', () => {
 
     // then
     expect(result).to.equal(true)
+  })
+
+  it('should fail to get a Contact', async () => {
+    // given
+    contactStore.contacts = []
+
+    // when
+    var gotError
+    try {
+      await sut.getContact('')
+    } catch (error) {
+      gotError = error
+    }
+
+    // then
+    expect(gotError.message).to.equal(Error('Contact not found').message)
+  })
+
+  it('should fail to return a Contact', async () => {
+    // given
+    const contact = contactStore.contacts[0]
+    delete contact._id
+    delete contact.updatedAt
+    delete contact.createdAt
+    const expectedContact = new Contact(contact)
+
+    // when
+    contactStore.isSuccess = false
+    var gotError
+    try {
+      await sut.createContact(expectedContact)
+    } catch (error) {
+      gotError = error
+    }
+
+    // then
+    expect(gotError.message).to.equal('Contact not created')
   })
 
 })

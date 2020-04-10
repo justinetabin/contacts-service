@@ -38,7 +38,12 @@ module.exports = class ContactsWorker {
    * @param {Contact} contact 
    */
   async createContact(contact) {
-    return await this.contactStore.createContact(contact)
+    const res = await this.contactStore.createContact(contact)
+    if (res === true) {
+      return contact
+    } else {
+      throw Error('Contact not created')
+    }
   }
 
   /**
