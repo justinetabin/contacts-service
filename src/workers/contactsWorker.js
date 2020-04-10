@@ -52,7 +52,7 @@ module.exports = class ContactsWorker {
    */
   async updateContact(contact) {
     contact.updatedAt = new Date()
-    return this.contactStore.updateContact(contact)
+    return await this.contactStore.updateContact(contact)
   }
 
   /**
