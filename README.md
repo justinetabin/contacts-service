@@ -1,6 +1,8 @@
 # Contacts REST API
 [![Build Status](https://travis-ci.com/justinetabin/contacts-service.svg?branch=master)](https://travis-ci.com/justinetabin/contacts-service)
 [![codecov](https://codecov.io/gh/justinetabin/contacts-service/branch/master/graph/badge.svg)](https://codecov.io/gh/justinetabin/contacts-service)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://contacts-service.herokuapp.com/documentation)
+
 
 A barebone Node.JS CRUD application.
 
