@@ -139,13 +139,13 @@ describe('ContactsWorker', () => {
     expect(gotError.message).to.equal(Error('Contact not found').message)
   })
 
-  it('should fail to return a Contact', async () => {
+  it('should fail to create a Contact', async () => {
     // given
     const contact = contactStore.contacts[0]
     delete contact._id
     delete contact.updatedAt
     delete contact.createdAt
-    const expectedContact = new Contact(contact)
+    const expectedContact = new Contact(contactStore.contacts[0])
 
     // when
     contactStore.isSuccess = false
@@ -158,6 +158,22 @@ describe('ContactsWorker', () => {
 
     // then
     expect(gotError.message).to.equal('Contact not created')
+  })
+
+  it('should fail to update a Contact', async () => {
+    const expectedContact = new Contact(contactStore.contacts[0])
+
+    // when
+    contactStore.isSuccess = false
+    var gotError
+    try {
+      await sut.updateContact(expectedContact)
+    } catch (error) {
+      gotError = error
+    }
+
+    // then
+    expect(gotError.message).to.equal('Contact not updated')
   })
 
 })
