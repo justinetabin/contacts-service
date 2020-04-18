@@ -109,7 +109,7 @@ describe('ContactsWorker', () => {
     const afterUpdatedAt = expectedContact.updatedAt
 
     // then
-    expect(result).to.equal(true)
+    expect(result).to.eql(expectedContact)
     expect(afterUpdatedAt).to.not.equal(beforeUpdatedAt)
   })
 
