@@ -22,6 +22,7 @@
     "chai": "^4.2.0",
     "codecov": "^3.6.5",
     "dotenv": "^8.2.0",
+    "hapi-cors": "^1.0.3",
     "hapi-swagger": "^13.0.0",
     "mocha": "^7.1.1",
     "mongodb": "^3.5.5",

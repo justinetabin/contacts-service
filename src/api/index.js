@@ -20,5 +20,6 @@ module.exports = {
       .concat(Inert)
       .concat(Vision)
       .concat(require('./plugins/swagger'))
+      .concat(require('./plugins/cors'))
   }
 }
