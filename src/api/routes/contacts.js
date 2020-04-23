@@ -13,6 +13,7 @@ module.exports = (contactsWorker) => {
       method: 'GET',
       path: '/contacts',
       options: {
+        cors: true,
         tags: ['api']
       },
       handler: (request, h) => {
