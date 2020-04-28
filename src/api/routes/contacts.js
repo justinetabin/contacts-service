@@ -25,6 +25,7 @@ module.exports = (contactsWorker) => {
       method: 'GET',
       path: '/contacts/{id}',
       options: {
+        cors: true,
         tags: ['api'],
         validate: {
           params: Joi.object({ id: Joi.string() })
@@ -44,6 +45,7 @@ module.exports = (contactsWorker) => {
       method: 'POST',
       path: '/contacts',
       options: {
+        cors: true,
         tags: ['api'],
         validate: {
           payload: Joi.object({
@@ -64,6 +66,7 @@ module.exports = (contactsWorker) => {
       method: 'PUT',
       path: '/contacts/{id}',
       options: {
+        cors: true,
         tags: ['api'],
         validate: {
           params: Joi.object({ id: Joi.string() }),
@@ -85,6 +88,7 @@ module.exports = (contactsWorker) => {
       method: 'DELETE',
       path: '/contacts/{id}',
       options: {
+        cors: true,
         tags: ['api'],
         validate: {
           params: Joi.object({ id: Joi.string() })
