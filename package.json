@@ -20,7 +20,7 @@
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^6.0.0",
     "chai": "^4.2.0",
-    "codecov": "^3.6.5",
+    "codecov": "^3.7.1",
     "dotenv": "^8.2.0",
     "hapi-swagger": "^13.0.0",
     "mocha": "^7.1.1",
